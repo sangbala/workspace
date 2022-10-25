@@ -37,6 +37,7 @@ public class Employee {
 
     // business methods
     public void work() {
+
         System.out.println(getName() + " working hard since " + getHireDate());
     }
 
@@ -57,8 +58,13 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
+    public void pay(){
+        System.out.println(getName()+" is paid ...somehow...");
+    }
+
     @Override
     public String toString() {
-        return "Employee: name=" + getName() + ", hireDate=" + getHireDate();
+
+        return getClass().getName() + getName() + ", hireDate=" + getHireDate();
     }
 }

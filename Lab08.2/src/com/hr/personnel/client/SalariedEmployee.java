@@ -29,9 +29,22 @@ public class SalariedEmployee extends Employee {
     }
 
     @Override
+    public void pay(){
+        System.out.println(getName()+
+                " is paid salary "+
+                getSalary());
+    }
+
+
+
+    @Override
     public String toString() {
-        return  "HourlyEmployee name: "+ getName() +
-                ", hire date: "+getHireDate()+
+//        return  "HourlyEmployee name: "+ getName() +
+//                ", hire date: "+getHireDate()+
+//                " SalariedEmployee:" +
+//                "salary=" + salary ;
+
+        return  super.toString()+
                 " SalariedEmployee:" +
                 "salary=" + salary ;
     }

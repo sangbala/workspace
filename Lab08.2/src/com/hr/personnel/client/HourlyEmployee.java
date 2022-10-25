@@ -39,9 +39,21 @@ public class HourlyEmployee extends Employee {
     }
 
     @Override
+    public void pay(){
+        System.out.println(getName()+
+                " is paid hourly "+
+                getRate()*getHours());
+    }
+
+    @Override
     public String toString() {
-        return  "HourlyEmployee name: "+ getName() +
-                ", hire date: "+getHireDate()+
+//        return  "HourlyEmployee name: "+ getName() +
+//                ", hire date: "+getHireDate()+
+//                " HourlyEmployee:" +
+//                " rate=" + rate +
+//                ", hours=" + hours ;
+
+        return  super.toString()+
                 " HourlyEmployee:" +
                 " rate=" + rate +
                 ", hours=" + hours ;

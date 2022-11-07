@@ -28,7 +28,7 @@ public class SalariedEmployee extends Employee {
         this.salary = salary;
     }
 
-    @Override
+   @Override
     public void pay(){
         System.out.println(getName()+
                 " is paid salary "+

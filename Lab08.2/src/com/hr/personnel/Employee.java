@@ -58,9 +58,12 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    public void pay(){
+    public  void pay()
+
+    {
         System.out.println(getName()+" is paid ...somehow...");
     }
+
 
     @Override
     public String toString() {

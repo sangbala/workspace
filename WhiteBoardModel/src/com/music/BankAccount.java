@@ -1,5 +1,7 @@
 package com.music;
 
+import com.music.test.CustomUncheckedException;
+
 import java.time.LocalTime;
 import java.time.LocalDate;
 
@@ -14,6 +16,7 @@ public class BankAccount {
     private LocalTime lastAccessedTime;
     private LocalDate lastAccessedDay;
 
+
     //Constructors:
     public BankAccount(){
 
@@ -25,11 +28,11 @@ public class BankAccount {
         this(accountNumber);
         setAccountName(accountName);
     }
-    public BankAccount(int accountNumber, String accountName, double balance){
+    public BankAccount(int accountNumber, String accountName, double balance) throws CustomUncheckedException{
         this(accountNumber,accountName);
         setBalance(balance);
     }
-    public BankAccount(int accountNumber, String accountName, double balance,AccountType accountType){
+    public BankAccount(int accountNumber, String accountName, double balance,AccountType accountType) throws CustomUncheckedException {
         this(accountNumber,accountName,balance);
         setAccountType(accountType);
     }
@@ -59,7 +62,8 @@ public class BankAccount {
         lastAccessedDay=LocalDate.now();
     }
 
-    public void openAccount(int accountNumber, String accountName, double balance,AccountType accountType){
+    public void openAccount(int accountNumber, String accountName, double balance,AccountType accountType)
+            throws CustomUncheckedException {
         setAccountNumber(accountNumber);
         setAccountName(accountName);
         setBalance(balance);
@@ -104,10 +108,11 @@ public class BankAccount {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(double balance) throws CustomUncheckedException {
 
         if(balance<MIN_TRANSACTION_VALUE){
-            System.out.println("The value must be greater than 0.");
+            //System.out.println("The value must be greater than 0.");
+            throw new CustomUncheckedException("The value must be greater than 0.");
         }else{
             this.balance = balance;
         }

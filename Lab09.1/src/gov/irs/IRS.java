@@ -20,13 +20,17 @@ public class IRS {
 
     public void collectTaxes() {
         for (int i = 0; i < currentIndex; i++) {
+            double deduction =payers[i].getStandardDeduction();
+            System.out.println("Tax payer's deduction is: "+ deduction);
             payers[i].payTaxes();
+            System.out.println();
         }
     }
     
     // helper method to add a TaxPayer to the array
     // what types of objects can be passed to this method?
     public void register(TaxPayer payer) {
+
         payers[currentIndex++] = payer;
     }
 }
